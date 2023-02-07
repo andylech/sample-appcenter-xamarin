@@ -34,5 +34,14 @@
     <string>AppCenterForms</string>
     <key>XSAppIconAssets</key>
     <string>Assets.xcassets/AppIcon.appiconset</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>appcenter-6a9fc077-9bb9-4c5b-ba5c-5d0f77a9abd1</string>
+            </array>
+        </dict>
+    </array>
 </dict>
 </plist>

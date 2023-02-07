@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using static AppCenterForms.AppSecrets;
 
 namespace AppCenterForms
 {
@@ -10,11 +12,18 @@ namespace AppCenterForms
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new ButtonPage();
+            //MainPage = new NewSolutionPage();
         }
 
         protected override void OnStart()
         {
+            AppCenter.Start(
+                $"ios={AppCenterSecret_iOS};" +
+                $"android={AppCenterSecret_Android};" +
+                $"uwp={AppCenterSecret_UWP};",
+                typeof(Analytics),
+                typeof(Crashes));
         }
 
         protected override void OnSleep()
